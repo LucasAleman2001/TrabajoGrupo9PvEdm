@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>Testeo de Persona</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form method="#" th:action="#" th:object="#" class="container">  
+
+        <div class="form-group">   <label class="control-label" for="nombre">Nombre:</label>    <input class="form-control" type="text" name="nombre" placeholder="Nombre" id=nombre th:field="${#}"> </div>
+        <div class="form-group">   <label class="control-label" for="apellido">Apellido:</label>    <input class="form-control" type="text" name="apellido" placeholder="Apellido" id=apellido th:field="${#}"> </div> 
+        <div class="form-group">   <label class="control-label" for="documento">Documento:</label>    <input class="form-control" type="number" name="documento" placeholder="Documento" id=documento th:field="${#}"> </div> 
+        <div class="form-group">
+        <label class="control-label" for="resultadoTesteo">Resultado del Testeo:</label>
+            <select class="form-control" name="resultadoTesteo" id=resultadoTesteo  th:field="${#}">
+                <option value="positivo">Positivo</option>
+                <option value="negativo">Negativo</option>
+            </select>
+        </div>
+        <div class="form-group">   <input class="btn btn-primary" href="#" type="submit" value="Registrar testeo" name="enviar" th:value="${#}"> </div>
+        
+    </form>
+</body>   
+<footer>
+</footer>
+</html>

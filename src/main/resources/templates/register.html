@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>Registro Usuario</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form method="#" th:action="#" th:object="#" class="container">  
+        <div class="form-group">   <label for="nombreUsuario" class="control-label">Nombre de Usuario:</label>    <input class="form-control" type="text" name="nombreUsuario" placeholder="Nombre de Usuario" id=nombreUsuario th:field="${#}"> </div>
+        <div class="form-group">   <label for="nombreUsuarioReal" class="control-label">Nombre de Usuario Real:</label>    <input class="form-control" type="text" name="nombreUsuarioReal" placeholder="Nombre de Usuario Real" id=nombreUsuarioReal th:field="${#}"> </div> 
+        <div class="form-group">   <label for="apellidoUsuarioReal" class="control-label">Apellido de Usuario Real:</label>    <input class="form-control" type="text" name="apellidoUsuarioReal" placeholder="Apellido de Usuario Real" id=apellidoUsuarioReal th:field="${#}"> </div> 
+        <div class="form-group">   <label for="contraseñaUsuario" class="control-label">Password:</label>    <input class="form-control" type="number" name="contraseñaUsuario" placeholder="Contraseña" id=contraseñaUsuario th:field="${#}"> </div> 
+        <div class="form-group">
+            <label class="control-label" for="tipoUsuario">Tipo de Usuario a registrar:</label>
+            <select name="TipoUsuario" id=tipoUsuario th:field="${#}" class="form-control">
+                <option value="consultor">Consultor</option>
+                <option value="registrador">Registrador</option>
+                <option value="bd">BD</option>
+            </select>
+        </div>
+        <div class="form-group">   <input class="btn btn-primary" href="#" type="submit" value="Registrar Usuario" name="registroCompleto" th:value="${#}"> </div>
+        
+    </form>
+</body>   
+<footer>
+</footer>
+</html>
