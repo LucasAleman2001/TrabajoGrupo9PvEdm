@@ -21,7 +21,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
-@Table(name="registro_Testeo")
+@Table(name="registro_Testeos")
 public class RegistroTesteo implements Serializable{
 	private static final long serialVersionUID=1L;
 	@Id
