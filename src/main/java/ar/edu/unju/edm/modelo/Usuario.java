@@ -8,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import org.hibernate.annotations.GenericGenerator;
 
-
 /**
  * 
  * @author Lucas
@@ -16,17 +15,20 @@ import org.hibernate.annotations.GenericGenerator;
  */
 
 @Entity
+
 public class Usuario implements Serializable{
 	
 	/**
 	 * 
 	 */
+
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO,generator="native")
 	@GenericGenerator(name="native",strategy="native")
-	private int idUsuario;
+	@Column(name="ID")
+	private Long idUsuario;
 	@Column
 	private String nombreUsuario;
 	@Column
@@ -39,10 +41,10 @@ public class Usuario implements Serializable{
 	private String tipoUsuario;
 	
 	public Usuario() {
-		
+		// TODO Auto-generated constructor stub
 	}
 	
-	public Usuario(int idUsuario, String nombreUsuario, String password, String nombreReal, String apellidoReal, String tipoUsuario) {
+	public Usuario(Long idUsuario, String nombreUsuario, String password, String nombreReal, String apellidoReal, String tipoUsuario) {
 		super();
 		this.idUsuario = idUsuario;
 		this.nombreUsuario = nombreUsuario;
@@ -51,12 +53,12 @@ public class Usuario implements Serializable{
 		this.apellidoReal = apellidoReal;
 		this.tipoUsuario = tipoUsuario;
 	}
-	
-	public int getIdUsuario() {
+
+	public Long getIdUsuario() {
 		return idUsuario;
 	}
 
-	public void setIdUsuario(int idUsuario) {
+	public void setIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
 
@@ -100,12 +102,16 @@ public class Usuario implements Serializable{
 		this.tipoUsuario = tipoUsuario;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((apellidoReal == null) ? 0 : apellidoReal.hashCode());
-		result = prime * result + idUsuario;
+		result = prime * result + ((idUsuario == null) ? 0 : idUsuario.hashCode());
 		result = prime * result + ((nombreReal == null) ? 0 : nombreReal.hashCode());
 		result = prime * result + ((nombreUsuario == null) ? 0 : nombreUsuario.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
@@ -127,7 +133,10 @@ public class Usuario implements Serializable{
 				return false;
 		} else if (!apellidoReal.equals(other.apellidoReal))
 			return false;
-		if (idUsuario != other.idUsuario)
+		if (idUsuario == null) {
+			if (other.idUsuario != null)
+				return false;
+		} else if (!idUsuario.equals(other.idUsuario))
 			return false;
 		if (nombreReal == null) {
 			if (other.nombreReal != null)
@@ -159,4 +168,5 @@ public class Usuario implements Serializable{
 				+ "]";
 	}
 	
+
 }

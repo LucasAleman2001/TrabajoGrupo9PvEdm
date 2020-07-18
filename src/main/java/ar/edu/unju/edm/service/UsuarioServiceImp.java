@@ -4,13 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import ar.edu.unju.edm.modelo.Usuario;
-import ar.edu.unju.edm.repository.IUsuario;
+
+import ar.edu.unju.edm.repository.IUsuarioRepository;
 
 @Repository
 public class UsuarioServiceImp implements IUsuarioService {
 	
 	@Autowired
-	IUsuario iusuario;
+	IUsuarioRepository iusuario;
 
 	@Override
 	public void guardar(Usuario usuario) {
